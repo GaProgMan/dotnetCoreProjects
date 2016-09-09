@@ -3,6 +3,25 @@ This repository contains the `consoleApplication` code.
 
 This is a .Net Console application and as such requires no additional steps to run (such as loading a web page in the browser) once the `dotnet run` command has been issued.
 
+# consoleApplicaion layout and basic description
+At the time of writing (vary late in the evening of 9/9/2016) this application is made of three layers:
+
+- Program
+- BLL (or Business Logic Layer)
+- DataLayer
+
+The `BLL` is responsible for creating instances of classes, which are described in the `DataLayer`. These classes are then consumed within the `Program` classes.
+
+The following is the execution path for `consoleApplication`:
+
+1. The `Main` method from within Program.cs is called
+1. The `GenerateMyObject` method of the static class `MyObjectFactory` is called
+1. An instance of `MyObject` is returned from `GenerateMyObject`
+1. An instance of the `LogicController` class is created and the instance of `MyObject` is passed to it.
+1. The `RunLogic` method of the `LogicControlller` instance is run
+1. The contents of the `MyObject` instances `Title` field are used to print a message to the console window
+1. Application exits 
+
 ## Building and running
 1. Change directory to the root of the code
 
