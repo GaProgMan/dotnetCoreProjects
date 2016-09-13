@@ -14,7 +14,7 @@ namespace Program {
         }
 
         public void RunLogic() {
-            Console.WriteLine(".Net on a Mac? Heresey");
+            Console.WriteLine(".Net on a Mac? Heresy");
             Console.WriteLine($"{nameof(customObject)}.Title = {customObject.Title}");
         }
     }
