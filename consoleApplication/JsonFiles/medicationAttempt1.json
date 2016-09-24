@@ -1,0 +1,11 @@
+{
+    "medicationId" : "1",
+    "humanReadableName" : "Pain meds",
+    "medicalName" : "Ibuprofen",
+    "perscribedDose" : "4",
+    "timeBetweenDoses" : "180",
+    "maxNumberOfDoses" : "6",
+
+
+    "notes" : "Some notes here"
+}
