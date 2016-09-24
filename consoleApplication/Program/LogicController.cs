@@ -8,7 +8,6 @@ namespace Program {
     public class LogicController{
 
         private MyObject customObject { get; set; }
-        private string medicationFileName { get; set; }
         private Medication medication { get; set; }
 
         public LogicController (MyObject inObject) {
