@@ -13,7 +13,7 @@ namespace BLL {
         * Creates a new instance of the MyObject class and returns it
         * Uses a default string if none is supplied
         */
-        public static MyObject GenerateMyObject(string title = "Some title for my flashy new objec instance") {
+        public static MyObject GenerateMyObject(string title = "Some title for my flashy new object instance") {
             return new MyObject{
                 Title = title
             };
