@@ -1,5 +1,5 @@
 # dotnetCoreProjects
-The repository will contain a collection of evolving .Net Core projects which are written and built using both a MacBook Air and a PC running Ubuntu 14.04
+The repository will contain a collection of evolving .Net Core projects which are written and built using both a MacBook Air (running macOs Sierra) and a PC running Ubuntu 14.04
 
 ## Building and running
 To build and run any of these projects (unless explictly stated otherwise in the project's `README.md` file) the `dotnet` commands are used.
