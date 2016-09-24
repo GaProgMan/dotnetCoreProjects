@@ -3,7 +3,7 @@ This repository contains the `consoleApplication` code.
 
 This is a .Net Console application and as such requires no additional steps to run (such as loading a web page in the browser) once the `dotnet run` command has been issued.
 
-# consoleApplicaion layout and basic description
+# consoleApplication layout and basic description
 At the time of writing (vary late in the evening of 9/9/2016) this application is made of three layers:
 
 - Program
