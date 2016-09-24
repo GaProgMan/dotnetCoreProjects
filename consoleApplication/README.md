@@ -45,6 +45,18 @@ The following is the execution path for `consoleApplication`:
 
     This is the only command required to be issued once the NuGet packages have been restored and the application has been built.
 
+## medico Reference
+
+As of 24/09/2016 this project is intrinsically linked to [`medico`](http://wiki.gaprogman.com/index.php?title=Medico). This is because the [medico Medication Class Json Format](http://wiki.gaprogman.com/index.php?title=Medico_-_Medicine_Class_Format) was used to implement and test JSON parsing.
+
+### Warning to potential devs
+
+In the `MyFileReader` class (as of 24/09/2016) there is this wonderful line of code:
+
+    Path.Combine(binLocation, @"../../../../JsonFiles/");
+
+There is a code comment block explaining this particularly egregious line. It is recommended that devs take a look at the comment block and become familiar with the layout of the project files. 
+
 ## Licence
 
 This licence for this project is a GNU GPL v3 licence, please see the `LICENCE` file for more details
