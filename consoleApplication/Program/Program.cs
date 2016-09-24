@@ -8,15 +8,20 @@ namespace Program {
         public static void Main(string[] args) {
 
             /*
-             * New code to test out loading of a json file from disk
+             * Create an instance of the FileReader class;
+             * Parse the contents of the medicationAttempt1.json;
+             * Create a new instance of the LogicController and pass
+             * it the parsed medication object;
+             * Call the RunLogic method of the LogicController
              */
             var fileReader = new MyFileReader();
-            var fileContent = fileReader.ParseFile("medicationAttempt1.json");
-            var parsedMedication = JsonConvert.DeserializeObject<Medication>(fileContent);
-
-            #if DEBUG
-            System.Console.WriteLine(parsedMedication.HumanReadableName);
-            #endif
+            var fileContent = string.Empty;
+            // Only run the logic if we could read the file
+            if (fileReader.TryParseFile("medicationAttempt1.json", out fileContent)) {
+                var parsedMedication = JsonConvert.DeserializeObject<Medication>(fileContent);
+                var medsLogicController = new LogicController(parsedMedication);
+                medsLogicController.RunLogic();
+            }
 
             /*
              * Create an instance of the LogicContoller class,
