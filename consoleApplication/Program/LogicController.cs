@@ -20,13 +20,16 @@ namespace Program {
         }
 
         public void RunLogic() {
-            Console.WriteLine(".Net on a Mac? Heresy");
             if (customObject != null) {
+                Console.WriteLine(".Net on a Mac? Heresy");
                 Console.WriteLine($"{nameof(customObject)}.Title = {customObject.Title}");
+                Console.Write(Environment.NewLine);
             }
 
             if (medication != null) {
+                Console.WriteLine("medico has awoken!");
                 Console.WriteLine($"{nameof(medication)}.Human Readable Name = {medication.HumanReadableName}");
+                Console.Write(Environment.NewLine);
             }
         }
     }
