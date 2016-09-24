@@ -1,5 +1,5 @@
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
 using Newtonsoft.Json;
 
 using DataLayer;
@@ -8,38 +8,44 @@ namespace BLL {
     public class MyFileReader {
 
         /*
-         * Used to read the contents of a supplied filename.
-         * The file is loaded from the root directory of the code.
-         * This will not work in a compiled version of the code
+         * Used to attempt to read the contents of the passed in file.
+         * If the file cannot be found or read, then we return false.
+         * Otherwise we return true.
          */
-        public string ParseFile (string fileName) {
-            var binLocation = System.Reflection.Assembly.GetEntryAssembly().Location;
+        public bool TryParseFile (string fileName, out string fileContent) {
+            fileContent = string.Empty;
 
-            // TODO: this, but better
-            // Extreme file path stupidity here.
-            // Here is the file path layout:
-            //  /bin
-            //    /debug
-            //      /netcoreapp1.0
-            //        binLocation is here
-            //  /JsonFiles
-            //    json file are here
-            
-            // binLocation + ../ -> netcoreapp1
-            // binLocation + ../../ -> debug
-            // binLocation + ../../../ -> bin
-            // binLocation + ../../../../ - > root
-            // binLocation + ../../../../JsonFiles -> JsonFiles
-            binLocation = Path.Combine(binLocation, @"../../../../JsonFiles/");
-            
-            var binDirectory = System.IO.Path.GetDirectoryName(binLocation);
-            var filePath = Path.Combine(binDirectory, fileName);
+            try {
+                var binLocation = System.Reflection.Assembly.GetEntryAssembly().Location;
 
-            var fileContent = string.Empty;
-            using (var reader = File.OpenText(filePath)) {
-                fileContent = reader.ReadToEnd();
+                // TODO: this, but better
+                // Extreme file path stupidity here.
+                // Here is the file path layout:
+                //  /bin
+                //    /debug
+                //      /netcoreapp1.0
+                //        binLocation is here
+                //  /JsonFiles
+                //    json file are here
+                
+                // binLocation + ../ -> netcoreapp1
+                // binLocation + ../../ -> debug
+                // binLocation + ../../../ -> bin
+                // binLocation + ../../../../ - > root
+                // binLocation + ../../../../JsonFiles -> JsonFiles
+                binLocation = Path.Combine(binLocation, @"../../../../JsonFiles/");
+                
+                var binDirectory = System.IO.Path.GetDirectoryName(binLocation);
+                var filePath = Path.Combine(binDirectory, fileName);
+                using (var reader = File.OpenText(filePath)) {
+                    fileContent = reader.ReadToEnd();
+                }
+
+                return !System.String.IsNullOrEmpty(fileContent);
             }
-            return fileContent;
+            catch {
+                return false;
+            }
         }
     }
 }
