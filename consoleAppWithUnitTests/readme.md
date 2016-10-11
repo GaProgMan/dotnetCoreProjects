@@ -38,6 +38,10 @@ As the test library requires use of the Library classes, it needs to be referenc
 
 This tells the .NET Core compiler that we need the project called `library` and that it should be loaded as a project. Without `target: project` here, the .NET Core compiler will attempt to load `library` from NuGet (or a similar source).
 
+## Unit Tests in .NET Core
+
+    /* add this section */
+
 ## Building and running
 1. Change directory to the root of the code
 
