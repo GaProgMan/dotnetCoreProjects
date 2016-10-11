@@ -5,7 +5,7 @@ This is a .Net Console application and as such requires no additional steps to r
 
 # consoleAppWithUnitTests layout and basic description
 
-This project is based on the .NET Core Unit tests tutorial, which you can read about [here https://docs.microsoft.com/en-us/dotnet/articles/core/testing/unit-testing-with-dotnet-test], and is split into two sections:
+This project is based on the .NET Core Unit tests tutorial, which you can read about [here](https://docs.microsoft.com/en-us/dotnet/articles/core/testing/unit-testing-with-dotnet-test), and is split into two sections:
 
 1. `App` + `Library` (within /src)
 2. `Test-Library` (within /test/test-library)
@@ -18,7 +18,7 @@ Library contains a single class called `Thing`, which has a single method called
 
 1. Takes two integers as parameters
 1. Sums the two paramters
-1. Stores the result of the sum in a String (via [String Interpolation https://msdn.microsoft.com/en-GB/library/dn961160.aspx?f=255&MSPPError=-2147217396]
+1. Stores the result of the sum in a String (via [String Interpolation](https://msdn.microsoft.com/en-GB/library/dn961160.aspx?f=255&MSPPError=-2147217396)
 1. Using a JSON Deserialiser, deserialises the string back into an integer
 1. Returns the new integer.
 
