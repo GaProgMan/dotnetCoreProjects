@@ -8,7 +8,8 @@ namespace ConsoleApplication
         public static void Main(string[] args)
         {
             // Basic use of the Thing class Get method
-            WriteLine($"The answer is {new Thing().Get(19, 23)}");
+            var thing = new Thing();
+            WriteLine($"The answer is {thing.Get(19, 23)}");
         }
     }
 }
