@@ -58,6 +58,8 @@ The important lines for unit tests are:
 
 You can read more about `xunit` at the [`xunit` GitHub page](https://xunit.github.io/)
 
+## Running The Unit Tests
+
 `xunit` is run against `test-library` by following these steps (assuming you are in the root directory of the project):
 
 1. Change directory to `test`:
