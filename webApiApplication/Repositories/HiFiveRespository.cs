@@ -1,5 +1,6 @@
 using HiFive.Contexts;
 using HiFive.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 //using System.Data.Entity;
 using System.Linq;
@@ -41,7 +42,7 @@ namespace HiFive.Repositories
         // don't do this in real code.
         public IEnumerable<HiFiveRecord> GetAll()
         {
-            return _context.HiFiveRecords;//.AsNoTracking();
+            return _context.HiFiveRecords.AsNoTracking();
         }
 
         public void Remove(string key)
