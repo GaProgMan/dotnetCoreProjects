@@ -197,6 +197,10 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 
+# Compiled JavaScript Bundles and Source Maps
+wwwroot/app/*.js
+wwwroot/app/*.js.map
+
 # SQL Server files
 *.mdf
 *.ldf
@@ -235,7 +239,8 @@ _Pvt_Extensions
 # FAKE - F# Make
 .fake/
 
-# .NET Core and macOS specific files*.swp
+# .NET Core and macOS specific files
+*.swp
 *.*~
 bin/
 obj/
