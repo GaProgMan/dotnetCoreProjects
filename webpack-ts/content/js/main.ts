@@ -2,13 +2,13 @@ import { Greeter } from './greeter'
 
 export class Main {
     private greeter: Greeter;
-    constructor(defaultElementId: string) {
+    constructor(private defaultElementId: string) {
         this.greeter = new Greeter("there");
     }
 
     sayHello () {
         this.greeter.sayHello();
-        document.getElementById('greeting').innerHTML = this.greeter.greetingMessage;
+        document.getElementById(this.defaultElementId).innerHTML = this.greeter.greetingMessage;
     }
 
     get greetingMessage() : string {
@@ -19,4 +19,3 @@ export class Main {
 // testing Main class
 var instanceOfMain = new Main('greeter');
 instanceOfMain.sayHello();
-console.log(instanceOfMain.greetingMessage);
