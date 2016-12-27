@@ -3,7 +3,7 @@ import { Greeter } from './greeter'
 export class Main {
     private greeter: Greeter;
     constructor(defaultElementId: string) {
-        this.greeter = new Greeter("Spikey poo!");
+        this.greeter = new Greeter("there");
     }
 
     sayHello () {
