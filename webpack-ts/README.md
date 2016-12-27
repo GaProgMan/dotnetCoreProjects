@@ -1,39 +1,46 @@
-# Welcome to ASP.NET Core
+# webpack-ts
+This repository contains the `webpack-ts` code.
 
-We've made some big updates in this release, so it’s **important** that you spend a few minutes to learn what’s new.
+This is a .NET Core MVC application which has some `npm` dependencies (see `Dependencies` section below). As such anyone wanting to build and run this application will need to install the dependencies before running it.
 
-You've created a new ASP.NET Core project. [Learn what's new](https://go.microsoft.com/fwlink/?LinkId=518016)
+# webpack-ts layout and basic description
 
-## This application consists of:
+webpack-ts is an MVC application with [TypeScript](https://www.typescriptlang.org/) and [webpack](https://webpack.js.org/) support built in. The source layout matches that of a standard .NET Core MVC application, with a small number of exceptions:
 
-*   Sample pages using ASP.NET Core MVC
-*   [Bower](https://go.microsoft.com/fwlink/?LinkId=518004) for managing client-side libraries
-*   Theming using [Bootstrap](https://go.microsoft.com/fwlink/?LinkID=398939)
+1. content/js
+1. wwwroot/app
+1. package.json
+1. tsconfg.json
+1. webpack.config.js
 
-## How to
+The `content/js` directory contains a selection of TypeScript files, which will be transpiled by the webpack plugin [awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader).
 
-*   [Add a Controller and View](https://go.microsoft.com/fwlink/?LinkID=398600)
-*   [Add an appsetting in config and access it in app.](https://go.microsoft.com/fwlink/?LinkID=699562)
-*   [Manage User Secrets using Secret Manager.](https://go.microsoft.com/fwlink/?LinkId=699315)
-*   [Use logging to log a message.](https://go.microsoft.com/fwlink/?LinkId=699316)
-*   [Add packages using NuGet.](https://go.microsoft.com/fwlink/?LinkId=699317)
-*   [Add client packages using Bower.](https://go.microsoft.com/fwlink/?LinkId=699318)
-*   [Target development, staging or production environment.](https://go.microsoft.com/fwlink/?LinkId=699319)
+The `wwwroot/app` directory will contain all bundles that are created by webpack (after any transpilation from TypeScript has taken place).
 
-## Overview
+The `package.json` file is an npm configuration file, which tells npm which packages to install in order to build and run this application.
 
-*   [Conceptual overview of what is ASP.NET Core](https://go.microsoft.com/fwlink/?LinkId=518008)
-*   [Fundamentals of ASP.NET Core such as Startup and middleware.](https://go.microsoft.com/fwlink/?LinkId=699320)
-*   [Working with Data](https://go.microsoft.com/fwlink/?LinkId=398602)
-*   [Security](https://go.microsoft.com/fwlink/?LinkId=398603)
-*   [Client side development](https://go.microsoft.com/fwlink/?LinkID=699321)
-*   [Develop on different platforms](https://go.microsoft.com/fwlink/?LinkID=699322)
-*   [Read more on the documentation site](https://go.microsoft.com/fwlink/?LinkID=699323)
+The `tsconfig.json` file is a TypeScript configuration file. This is used by the awesome-typescript-loader plugin to transpile any TypeScript files to JavaScript before bundling them with webpack.
 
-## Run & Deploy
+The `webpack.config.js` file is a webpack configuration file. This describes the entry points, outputs and plugins that webpack must use to bundle our JavaScript.
 
-*   [Run your app](https://go.microsoft.com/fwlink/?LinkID=517851)
-*   [Run tools such as EF migrations and more](https://go.microsoft.com/fwlink/?LinkID=517853)
-*   [Publish to Microsoft Azure Web Apps](https://go.microsoft.com/fwlink/?LinkID=398609)
+## Building and Running webpack-ts
 
-We would love to hear your [feedback](https://go.microsoft.com/fwlink/?LinkId=518015)
+1. Download and install all of the npm packages
+
+    `npm install`
+
+1. Restore all required .NET Core packages:
+
+    `dotnet restore`
+
+1. Transpile all TypeScript and build all JavaScript bundles:
+
+    `webpack`
+
+1. Build and run the application:
+
+    `dotnet run`
+
+## Licence
+
+This project uses the MIT licence, please see the `license.md` file for more details.
