@@ -17,5 +17,5 @@ export class Main {
 }
 
 // testing Main class
-var instanceOfMain = new Main('greeter');
+var instanceOfMain = new Main('greeting');
 instanceOfMain.sayHello();
