@@ -7,6 +7,6 @@ export class Greeter {
     }
 
     get greetingMessage() : string{
-        return `Hello ${this.message} from TypeScript`;
+        return `Hello ${this.message} from TypeScript within a webpack bundle`;
     }
 }
